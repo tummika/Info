@@ -10,7 +10,7 @@ const product = [
     video: "WINGE_9a_c.mov",
     price: "1000",
     description: "This is product 1",
-    brand: "Brand AaA",
+    brand: "Brand A",
     title: "Product 1"
   },
   {
