@@ -7,7 +7,7 @@ const product = [
     title: "-- Select Anyone --"
   },
   {
-    video: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+    video: "WINGE_9a_c",
     price: "1000",
     description: "This is product 1",
     brand: "Brand Aa",
