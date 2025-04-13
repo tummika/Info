@@ -2,7 +2,7 @@
 const product = [
   { video: "https://www.w3schools.com/html/mov_bbb.mp4", 
     title: "-- Select Anyone --" },
-  { video: "C:/Users/user/Downloads/osfstorage-archive/Clips (small size)/DEEPB_9b_c.mov", 
+  { video: "DEEPB_9b_c.mov", 
     pupil: "avg_pupil_per_250ms.csv",
     title: "หมีเด็ก", 
     highlights: [{ start: 1, end: 3 }] },
