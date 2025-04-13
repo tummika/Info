@@ -1,0 +1,150 @@
+/* ตั้งค่าพื้นหลังและฟอนต์สำหรับทั้งหน้า */
+body {
+  background: #c6caf3; /* สีพื้นหลังโทนม่วงอ่อน */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* สไตล์หัวข้อ "Select Videos" */
+.checkbox-header {
+  color: #ffffff;        /* สีตัวอักษรขาว */
+  font-size: 1.5rem;     /* ขนาดตัวอักษรใหญ่ */
+  font-weight: bold;
+  text-align: center;
+
+}
+
+/* ป้ายชื่อวิดีโอที่อยู่เหนือ player */
+.video-label-static {
+  background: #ED2E7C;   /* สีพื้นชมพูเข้ม */
+  color: white;
+  text-align: center;
+  padding: 4px 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* สไตล์สำหรับ <video> element */
+video {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;   /* ให้ขนาดวิดีโอไม่บิดเบี้ยว */
+  border-radius: 0 0 10px 10px;
+}
+
+/* กล่องแสดงข้อมูลสินค้าแต่ละชิ้น */
+.product-box {
+  flex: 1 1 300px;                     /* responsive layout */
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);  /* เงาอ่อน */
+  transition: 0.3s;
+  max-width: 600px;
+}
+
+/* พื้นที่รวมกล่องสินค้าแบบ flex layout */
+.compare-area-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 12px;
+}
+
+/* กล่องรวมปุ่มควบคุม + progress bar ให้อยู่ในบรรทัดเดียวกัน */
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+/* เส้น progress bar ที่วางอยู่ระหว่างปุ่ม */
+.custom-progress-bar {
+  flex: 1;                /* ขยายเต็มช่องว่าง */
+  height: 8px;
+  background: #e0e0e0;    /* สีเทาอ่อน */
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* แถบสีเข้มที่แสดงความคืบหน้าในการเล่น */
+.progress-fill {
+  height: 100%;
+  background-color: #21296E; /* สีกรม */
+  width: 0%;                  /* เริ่มต้นที่ 0% */
+  transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* marker ที่แสดง highlight ช่วงเวลาต่าง ๆ บน progress bar */
+.highlight-marker {
+  position: absolute;
+  top: -3px;
+  height: 14px;
+  background-color: #ED2E7C; /* สีชมพูเข้ม */
+  opacity: 0.8;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* สไตล์ของปุ่มควบคุม (▶️, 🔊, ⛶) */
+.control-btn, .play-btn {
+  position: static;        /* ใช้ layout ธรรมดา ไม่ลอย */
+  background: none;
+  border: none;
+  outline: none;
+  color: #21296E;          /* สีกรมเข้ม */
+  padding: 0 4px;          /* ช่องว่างซ้าย-ขวาเล็กน้อย */
+  font-size: 1.15rem;
+  cursor: pointer;
+  opacity: 0.9;
+  z-index: 1;
+  margin: 0;
+}
+
+/* เพิ่มความชัดเมื่อเอาเมาส์ไปวางบนปุ่ม */
+.control-btn:hover, .play-btn:hover {
+  opacity: 1;
+}
+
+.video-time-label {
+  font-size: 0.85rem;
+  color: #21296E;
+  margin-left: auto;
+  white-space: nowrap;
+  font-family: monospace;
+}
+
+.progress-tooltip {
+  position: absolute;
+  top: -28px;  /* อยู่เหนือ progress bar */
+  transform: translateX(-50%);
+  background-color: #21296E;
+  color: white;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  font-family: monospace;
+  opacity: 0.95;
+}
+
+#checkboxContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  max-width: 700px;
+  margin: 0 auto 24px auto;
+  gap: 12px;
+  max-height: 5rem; /* ประมาณ 2 แถว */
+  overflow: hidden;
+  background-color: white;
+}
+
+
