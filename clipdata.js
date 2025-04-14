@@ -20,8 +20,8 @@ const product = [
       ]
     },
     {  videoOptions: [
-      { label: "Heatmap", url: "FOODI_10a_H.mp4" },
-      { label: "COI", url: "FOODI_10a_C.mp4" }
+      { label: "Heatmap", url: "Foodi 10a H.mp4" },
+      { label: "COI", url: "Foodi 10a C.mp4" }
     ],
       title: "FOODI_10a", 
       highlights: [{ start : 8.7 , end: 9.3 }, { start : 10.8 , end: 11.4 }, { start : 13.8 , end: 14.4 }, { start : 18.3 , end: 18.9 }, { start : 21.3 , end: 23.1 }, { start : 23.4 , end: 24.9 }, { start : 26.4 , end: 27.0 }      ],
@@ -29,8 +29,8 @@ const product = [
       ]
     },
     {  videoOptions: [
-      { label: "Heatmap", url: "FOODI_2a_H.mp4" },
-      { label: "COI", url: "FOODI_2a_C.mp4" }
+      { label: "Heatmap", url: "Foodi 2a H.mp4" },
+      { label: "COI", url: "Foodi 2a C.mp4" }
     ],
       title: "FOODI_2a", 
       highlights: [{ start : 4.5 , end: 5.1 }, { start : 11.1 , end: 12.3 }, { start : 13.5 , end: 14.1 }, { start : 19.2 , end: 20.1 }, { start : 22.5 , end: 24.3 }, { start : 27.3 , end: 29.7 }   ],
@@ -38,8 +38,8 @@ const product = [
       ]
     },
     {  videoOptions: [
-      { label: "Heatmap", url: "FORGE_17a_H.mp4" },
-      { label: "COI", url: "FORGE_17a_C.mp4" }
+      { label: "Heatmap", url: "Forge 17a H.mp4" },
+      { label: "COI", url: "Forge 17a C.mp4" }
     ],
       title: "FORGE_17a", 
       highlights: [{ start : 0.6 , end: 1.2 }, { start : 1.8 , end: 3.9 }, { start : 4.2 , end: 7.5 }, { start : 7.8 , end: 8.4 }, { start : 10.5 , end: 12.6 }, { start : 15.9 , end: 17.1 }, { start : 18.0 , end: 18.6 }, { start : 19.2 , end: 20.7 }, { start : 21.6 , end: 23.4 }, { start : 23.7 , end: 24.3 }, { start : 27.3 , end: 27.9 }],
@@ -47,8 +47,8 @@ const product = [
       ]
     }, 
     {  videoOptions: [
-      { label: "Heatmap", url: "SHREK_8a_H.mp4" },
-      { label: "COI", url: "SHREK_8a_C.mp4" }
+      { label: "Heatmap", url: "Shrek 8A H.mp4" },
+      { label: "COI", url: "Shrek 8A C.mp4" }
     ],
       title: "SHREK_8a", 
       highlights: [{ start : 5.1 , end: 5.7 }, { start : 10.2 , end: 12.3 }, { start : 12.6 , end: 13.2 }, { start : 17.4 , end: 18.0 }, { start : 21.9 , end: 22.5 }, { start : 26.4 , end: 27.0 }],
@@ -56,8 +56,8 @@ const product = [
       ]
     }, 
     {  videoOptions: [
-      { label: "Heatmap", url: "SPIDE_8a_H.mp4" },
-      { label: "COI", url: "SPIDE_8a_C.mp4" }
+      { label: "Heatmap", url: "Spide 8A H.mp4" },
+      { label: "COI", url: "Spide 8A C.mp4" }
     ],
       title: "SPIDE_8a", 
       highlights: [{ start : 1.2 , end: 1.8 }, { start : 12.6 , end: 14.4 }, { start : 14.7 , end: 15.6 }, { start : 18.0 , end: 18.6 }, { start : 18.9 , end: 19.8 }, { start : 20.1 , end: 20.7 }, { start : 21.6 , end: 22.5 }, { start : 24.0 , end: 27.0 }, { start : 27.3 , end: 28.2 }],
