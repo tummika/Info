@@ -3,7 +3,7 @@ const product = [
 
     {  videoOptions: [
       { label: "Heatmap", url: "DEEPB_5a_H.mp4" },
-      { label: "COI", url: "DEEPB_5a_C.mp4" }
+      { label: "COI", url: "https://github.com/tummika/Info/blob/2a0726886e9e125ff331027cf2ac89de52735854/DEEPB_5a_C.mp4" }
     ],
       title: "DEEPB_5a", 
       highlights: [{ start: 16.2, end: 18.0 },{ start: 23.1, end: 23.7 },{ start: 23.1, end: 23.7 },{ start: 27.3, end: 27.9 }],
