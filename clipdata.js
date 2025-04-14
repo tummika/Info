@@ -2,8 +2,8 @@ const product = [
     { video: " ",  title: "-- Select Anyone --"  },
 
     {  videoOptions: [
-      { label: "Heatmap", url: "https://raw.githubusercontent.com/tummika/Info/2a0726886e9e125ff331027cf2ac89de52735854/DEEPB_5a_H.mp4" },
-      { label: "COI", url: "https://github.com/tummika/Info/2a0726886e9e125ff331027cf2ac89de52735854/DEEPB_5a_C.mp4" }
+      { label: "Heatmap", url: "Deepb 5A H.mp4" },
+      { label: "COI", url: "Deepb 5A C.mp4" }
     ],
       title: "DEEPB_5a", 
       highlights: [{ start: 16.2, end: 18.0 },{ start: 23.1, end: 23.7 },{ start: 23.1, end: 23.7 },{ start: 27.3, end: 27.9 }],
@@ -11,8 +11,8 @@ const product = [
       ]
     },
     {  videoOptions: [
-      { label: "Heatmap", url: "Deepb_5a_C.mp4" },
-      { label: "COI", url: "WINGE_6a_c.mov" }
+      { label: "Heatmap", url: "Deepb 9B H.mp4" },
+      { label: "COI", url: "Deepb 9B C.mp4" }
     ],
       title: "DEEPB_9b", 
       highlights: [{ start : 0.9 , end: 1.5 }, { start : 1.8 , end: 2.4 }, { start : 2.7 , end: 3.3 }, { start : 3.6 , end: 5.4 }, { start : 7.5 , end: 8.1 }, { start : 8.4 , end: 9.3 }, { start : 9.6 , end: 10.2 }, { start : 10.8 , end: 11.4 }, { start : 14.1 , end: 15.3 }, { start : 16.2 , end: 17.4 }, { start : 20.4 , end: 23.1 }, { start : 26.4 , end: 28.2 }, { start : 28.8 , end: 29.4 }      ] ,
