@@ -11,7 +11,7 @@ const product = [
       ]
     },
     {  videoOptions: [
-      { label: "Heatmap", url: "https://tummika.github.io/Info/DEEPB_9b_H.mp4" },
+      { label: "Heatmap", url: "Deepb_5a_C.mp4" },
       { label: "COI", url: "WINGE_6a_c.mov" }
     ],
       title: "DEEPB_9b", 
