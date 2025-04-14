@@ -52,6 +52,16 @@ function handleSelection() {
       const canvas = document.createElement("canvas");
       canvas.height = 120;
       videoBox.appendChild(canvas);
+      // 🔻 เพิ่มรูปภาพใต้กราฟ (ถ้ามี field image)
+if (p.image) {
+  const img = document.createElement("img");
+  img.src = p.image;
+  img.alt = p.title;
+  img.style.maxWidth = "100%";
+  img.style.marginTop = "8px";
+  img.style.borderRadius = "10px";
+  videoBox.appendChild(img);
+}
 
       chart = new Chart(canvas, {
         type: 'line',
