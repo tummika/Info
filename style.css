@@ -235,7 +235,7 @@ input:checked + .slider:before {
 .highlight-tooltip {
   position: absolute;
   background-color: #ffcb2f;
-  color: white;
+  color: black;
   padding: 3px 6px;
   border-radius: 4px;
   font-size: 0.75rem;
