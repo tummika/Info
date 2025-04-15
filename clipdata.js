@@ -67,7 +67,7 @@ const product = [
 ]
     }, 
     {  videoOptions: [
-      { label: "Heatmap", url: "Spide 8A H.mp4" },
+      { label: "Heatmap", url: "Spider 8A H.mp4" },
       { label: "COI", url: "Spide 8A C.mp4" }
     ],
       title: "Fast Motion Scene", 
