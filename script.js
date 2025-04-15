@@ -62,6 +62,7 @@ function handleSelection() {
         img.style.borderRadius = "10px";
         videoBox.appendChild(img);
       }
+      
 
     
       chart = new Chart(canvas, {
