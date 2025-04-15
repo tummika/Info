@@ -151,7 +151,7 @@ function handleSelection() {
         },
         options: {
           animation: false,
-          interaction: { mode: 'index', intersect: false },
+          interaction: { mode: 'index', intersect: true },
           onClick: function (evt, activeEls, chart) {
             const scaleX = chart.scales.x;
             if (!scaleX || typeof scaleX.getValueForPixel !== 'function') return;
@@ -191,15 +191,36 @@ function handleSelection() {
               callbacks: {
                 title: () => '',
                 label: function (context) {
-                  // ซ่อน tooltip สำหรับเส้น scatter ที่ label ชื่อ "Current Time"
-                  if (context.dataset.label === 'Current Time') return '';
-            
+                  const datasetLabel = context.dataset.label;
                   const xSec = (context.parsed.x / 1000).toFixed(2);
+            
+                  if (datasetLabel === 'Current Time') {
+                    // หาค่า y ที่ใกล้ที่สุดจาก dataset หลัก
+                    const allData = context.chart.data.datasets[0].data;
+                    const currentX = context.parsed.x;
+            
+                    let closest = allData[0];
+                    for (let i = 1; i < allData.length; i++) {
+                      if (Math.abs(allData[i].x - currentX) < Math.abs(closest.x - currentX)) {
+                        closest = allData[i];
+                      }
+                    }
+            
+                    const yVal = closest.y?.toFixed(3);
+                    return [`time: ${xSec} s`, `Avg z-score pupil size: ${yVal}`];
+                  }
+                  else {
                   const yVal = context.parsed.y?.toFixed(3);
-                  return [`เวลา: ${xSec} วินาที`, `z-score: ${yVal}`];
+                  return [`time: ${xSec} s`, `Avg z-score pupil size: ${yVal}`];}
+
+
+
                 }
               }
             }
+            
+            
+            
             
           }
         }
@@ -438,7 +459,7 @@ function createCustomControls(video, highlights, productObj) {
 
 
 let selectedVersionIndex = 0;
-const versionNames = ["Heatmap", "COI"];
+const versionNames = ["Heatmap", "Democratic COI"];
 
 function updateVideoVersion() {
   const isChecked = document.getElementById("versionToggle").checked;
