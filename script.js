@@ -53,6 +53,16 @@ function handleSelection() {
       canvas.height = 120;
       canvas.id = `chart-${i}`;  // ✅ เพิ่มบรรทัดนี้
       videoBox.appendChild(canvas);
+      if (p.image) {
+        const img = document.createElement("img");
+        img.src = p.image;
+        img.alt = `${p.title} image`;
+        img.style.maxWidth = "100%";
+        img.style.marginTop = "8px";
+        img.style.borderRadius = "10px";
+        videoBox.appendChild(img);
+      }
+
     
       chart = new Chart(canvas, {
         type: 'line',
