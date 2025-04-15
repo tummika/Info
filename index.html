@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- กำหนด encoding ของหน้าเว็บให้รองรับภาษาได้หลากหลาย -->
+  <meta charset="UTF-8" />
+
+  <!-- สำหรับทำให้เว็บไซต์ responsive บนมือถือ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ชื่อแท็บของเว็บไซต์ -->
+  <title>Compare Products</title>
+
+  <!-- เชื่อมกับไฟล์ CSS ที่ใช้ตกแต่งหน้าตา -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ส่วนหัวของหน้าเว็บ -->
+  <div class="text-center my-4">
+    <!-- หัวข้อหลัก -->
+    <h1 class="checkbox-header">EYE TRACKING STUDY</h1>
+  </div>
+
+  <!-- พื้นที่สำหรับแสดง checkbox ให้ผู้ใช้เลือกวิดีโอ -->
+  <!-- จะถูกสร้างขึ้นแบบ dynamic โดย JavaScript -->
+
+  <div id="box" class="text-max">Select maximum 2 videos</div>
+  <div class="carousel-wrapper">
+    <button id="scrollLeft" class="carousel-arrow">←</button>
+    <div id="checkboxContainer" class="carousel-container"></div>
+    <button id="scrollRight" class="carousel-arrow">→</button>
+  </div>
+  
+  <!-- ปุ่ม toggle สำหรับสลับเวอร์ชันวิดีโอ -->
+  <div class="version-toggle-wrapper">
+    <h4 class="view-toggle">View :  </h4>
+    <label class="switch">
+      <input type="checkbox" id="versionToggle" onchange="updateVideoVersion()">
+      <span class="slider"></span>
+    </label>
+    <span id="versionLabel"><strong>Heatmap</strong></span>
+  </div>
+
+
+
+
+  <!-- พื้นที่สำหรับแสดงวิดีโอและรายละเอียดของสินค้าที่ถูกเลือก -->
+  <!-- จะถูกสร้างแบบ dynamic เช่นกัน -->
+  <div id="compareArea" class="compare-area-container"></div>
+
+
+
+  
+  <!-- เชื่อมกับ JavaScript ที่ควบคุมการทำงานของหน้าเว็บ -->
+  <!-- โหลดข้อมูลก่อน -->
+  <script src="clipdata.js"></script>
+
+  <!-- โหลด logic หลังจากที่มีข้อมูลแล้ว -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-dragdata@2.0.0"></script>
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
