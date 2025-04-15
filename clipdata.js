@@ -2,7 +2,7 @@ const product = [
     { video: " ",  title: "-- Select Anyone --"  },
 
     {  videoOptions: [
-      { label: "Heatmap", url: "Deepb 5A H.mp4" },
+      { label: "Heatmap", url: "Deepb_5A_H.mp4" },
       { label: "COI", url: "Deepb 5A C.mp4" }
     ],
       title: "DEEPB_5a", 
