@@ -171,6 +171,7 @@ function handleSelection() {
             }
           },
           scales: {
+
             x: {
               type: 'linear',
               title: { display: true, text: 'Time (s)' },
@@ -190,12 +191,16 @@ function handleSelection() {
               callbacks: {
                 title: () => '',
                 label: function (context) {
+                  // ซ่อน tooltip สำหรับเส้น scatter ที่ label ชื่อ "Current Time"
+                  if (context.dataset.label === 'Current Time') return '';
+            
                   const xSec = (context.parsed.x / 1000).toFixed(2);
                   const yVal = context.parsed.y?.toFixed(3);
-                  return [`Time: ${xSec}s`, `Avg z-score pupil size: ${yVal}`];
+                  return [`เวลา: ${xSec} วินาที`, `z-score: ${yVal}`];
                 }
               }
             }
+            
           }
         }
       });
