@@ -47,22 +47,13 @@ function handleSelection() {
 
     let chart = null;
     if (p.pupilData) {
-      const scaledPupilData = p.pupilData.map(pt => ({ x: pt.x, y: pt.y })); // ไม่ต้อง *0.25 แล้ว
-
+      const scaledPupilData = p.pupilData.map(pt => ({ x: pt.x, y: pt.y }));
+      
       const canvas = document.createElement("canvas");
       canvas.height = 120;
+      canvas.id = `chart-${i}`;  // ✅ เพิ่มบรรทัดนี้
       videoBox.appendChild(canvas);
-      // 🔻 เพิ่มรูปภาพใต้กราฟ (ถ้ามี field image)
-if (p.image) {
-  const img = document.createElement("img");
-  img.src = p.image;
-  img.alt = p.title;
-  img.style.maxWidth = "100%";
-  img.style.marginTop = "8px";
-  img.style.borderRadius = "10px";
-  videoBox.appendChild(img);
-}
-
+    
       chart = new Chart(canvas, {
         type: 'line',
         data: {
@@ -87,21 +78,34 @@ if (p.image) {
         },
         options: {
           animation: false,
-          onClick: (evt, activeEls, chartInstance) => {
-            const scaleX = chartInstance.scales.x;
-            const canvasRect = chartInstance.canvas.getBoundingClientRect();
-            const offsetX = evt.clientX - canvasRect.left;
-
-            const xValue = scaleX.getValueForPixel(offsetX); // หน่วย ms
-            const canvasId = chartInstance.canvas.id;
-            const videoId = canvasId.replace("chart-", "video-"); // ถ้า set id chart เป็น chart-0, chart-1, ...
+          onClick: function(evt, activeEls, chart) {
+            const scaleX = chart.scales.x;
+            if (!scaleX || typeof scaleX.getValueForPixel !== 'function') return;
+          
+            // ใช้ getRelativePosition เพื่อได้ offsetX ที่แม่นยำ
+            const pos = Chart.helpers.getRelativePosition(evt, chart);
+            const offsetX = pos.x;
+          
+            const xValue = scaleX.getValueForPixel(offsetX);
+          
+            const canvasId = chart.canvas.id;
+            const videoId = canvasId.replace("chart-", "video-");
             const video = document.getElementById(videoId);
-
-
+          
+            console.log("[DEBUG] Chart Click", { xValue, canvasId, videoId, video });
+            console.log("scaleX.min:", scaleX.min);
+            console.log("scaleX.max:", scaleX.max);
+          
             if (video && !isNaN(xValue)) {
-              video.currentTime = xValue / 1000; // วิดีโอใช้เป็นวินาที
+              video.pause();
+              video.currentTime = xValue / 1000;
+              video.play();
             }
-          },
+          }
+          
+          
+          
+          ,
           scales: {
             x: {
               type: 'linear',
@@ -116,22 +120,19 @@ if (p.image) {
           },
           plugins: {
             legend: { display: false },
-            dragData: true,
-            dragDataRound: 2,
-            onDragEnd: (e, datasetIndex, index, value) => {
-              const video = document.getElementById(`video-${i}`);
-              if (datasetIndex === 1 && video) {
-                video.currentTime = value.x / 1000;
-              }
-            }
+            dragData: false
           }
         }
-
+        
       });
 
+  
+      setTimeout(() => chart.update(), 0);  // 🟢 เปลี่ยนจาก chart.update();
+      
       p._chart = chart;
       p._pupilDataSec = scaledPupilData;
     }
+    
 
     setTimeout(() => {
       const video = document.getElementById(`video-${i}`);
@@ -205,18 +206,13 @@ function createCustomControls(video, highlights, productObj) {
   topControls.appendChild(timeLabel);
 
   const progressWrapper = document.createElement("div");
-  // --- สร้างเส้นแนวตั้งที่จะเชื่อมจากกราฟขึ้นไป progress bar ---
-  const verticalLine = document.createElement("div");
-  verticalLine.className = "vertical-line-link";
-  verticalLine.style.left = "0px";
-  verticalLine.style.display = "none";
+
+
 
   // --- กำหนดให้ videoBox สามารถเป็นตำแหน่งอ้างอิงได้ ---
   video.parentElement.style.position = "relative";
-  video.parentElement.appendChild(verticalLine);
 
-  // --- เก็บ reference ไว้ใน productObj ---
-  productObj._verticalLine = verticalLine;
+
 
   progressWrapper.className = "progress-wrapper";
 
